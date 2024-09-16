@@ -29,6 +29,15 @@ Instale utilizando o organizador de pacotes pip
     python -m uvicorn main:app --reload
 ```
 
+a métrica de valores adotado foi:
+(Sendo que são valores de tráfego/moradia anuais)
+```
+df["Importancia TransPub"] = ((df["Produzidas"] + df["Atraidas"]) / 2).round()
+df["Importancia Infra"] = (
+    df["População"] + df["Escolares"] * 1 / 3 + df["Empregos"]
+).round()
+```
+
 ## Endpoints
 
 ### 1. Criar Nova Região
@@ -53,7 +62,7 @@ Retorno:
 ```
 
 
-### 1. Criar Nova Região
+### 2. Ler previsão de uma região
 
 `GET /previsao/{nome}`
 
